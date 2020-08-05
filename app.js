@@ -35,7 +35,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/users", {
+mongoose.connect("mongodb+srv://zac:nonsense66@todolist-v2.nwiqg.mongodb.net/secretDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -224,6 +224,6 @@ app.post("/login", function(req, res) {
   // });
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server running on port 3000...");
 });
